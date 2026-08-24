@@ -1,32 +1,24 @@
 <!DOCTYPE html>
 <html lang="fr">
-
 <head>
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Company Mods</title>
+    <title>Company Mods — Horlogerie personnalisée</title>
 
     <meta name="description"
-          content="Company Mods — Montres personnalisées équipées de mouvements automatiques.">
+          content="Company Mods — Horlogerie personnalisée et création de Seiko Mods uniques.">
 
     <style>
 
-        :root {
-            --black: #111111;
-            --dark: #1a1a1a;
-            --grey: #6d6d6d;
-            --cream: #f7f6f2;
-            --white: #ffffff;
-            --red: #c9364d;
-            --border: #deddd8;
-        }
+        /* =========================
+           RÉGLAGES GÉNÉRAUX
+        ========================= */
 
         * {
-            box-sizing: border-box;
             margin: 0;
             padding: 0;
+            box-sizing: border-box;
         }
 
         html {
@@ -34,353 +26,480 @@
         }
 
         body {
-            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-            background: var(--cream);
-            color: var(--black);
+            font-family: Arial, Helvetica, sans-serif;
+            background: #111;
+            color: #fff;
             line-height: 1.7;
         }
 
-        /* =========================
-           HEADER
-           ========================= */
-
-        header {
-            background: var(--white);
-            border-bottom: 1px solid var(--border);
-            padding: 25px 40px;
+        a {
+            text-decoration: none;
+            color: inherit;
         }
 
-        .header-inner {
-            max-width: 1200px;
-            margin: auto;
+
+        /* =========================
+           EN-TÊTE
+        ========================= */
+
+        header {
+            height: 78px;
+            background: #f7f5f1;
+            color: #111;
 
             display: flex;
             align-items: center;
             justify-content: space-between;
+
+            padding: 0 6%;
+
+            position: relative;
+            z-index: 10;
         }
 
-        .home-logo {
-            display: flex;
-            align-items: center;
-        }
+        /* Logo */
 
         .logo {
-            height: 85px;
-            width: auto;
-            object-fit: contain;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            line-height: 1;
         }
 
-        .instagram-link {
-            color: var(--black);
+        .logo-main {
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: 28px;
+            letter-spacing: 7px;
+        }
+
+        .logo-sub {
+            color: #d51f3f;
+            font-size: 11px;
+            letter-spacing: 6px;
+            margin-top: 4px;
+        }
+
+
+        /* Instagram */
+
+        .instagram {
+            width: 28px;
+            height: 28px;
 
             display: flex;
             align-items: center;
             justify-content: center;
-
-            text-decoration: none;
 
             transition: 0.3s ease;
         }
 
-        .instagram-link:hover {
-            color: var(--red);
-            transform: translateY(-2px);
+        .instagram:hover {
+            transform: scale(1.12);
+            opacity: 0.65;
         }
+
+        .instagram svg {
+            width: 25px;
+            height: 25px;
+            fill: none;
+            stroke: #111;
+            stroke-width: 1.8;
+        }
+
 
         /* =========================
            HERO
-           ========================= */
+        ========================= */
 
         .hero {
-            min-height: 650px;
+            min-height: 620px;
 
             display: flex;
-            justify-content: center;
             align-items: center;
+            justify-content: center;
 
             text-align: center;
 
-            padding: 80px 25px;
+            position: relative;
+            overflow: hidden;
+
+            background-image:
+                linear-gradient(
+                    rgba(0, 0, 0, 0.20),
+                    rgba(0, 0, 0, 0.42)
+                ),
+                url("montres-company-mods.jpg");
+
+            background-size: cover;
+            background-position: center;
+        }
+
+        .hero::after {
+            content: "";
+            position: absolute;
+            inset: 0;
 
             background:
                 radial-gradient(
                     circle at center,
-                    #ffffff 0%,
-                    #f7f6f2 55%,
-                    #e9e8e4 100%
+                    rgba(255,255,255,0.04),
+                    rgba(0,0,0,0.30) 65%,
+                    rgba(0,0,0,0.55)
                 );
+
+            pointer-events: none;
         }
 
         .hero-content {
-            max-width: 900px;
+            position: relative;
+            z-index: 2;
+
+            max-width: 850px;
+            padding: 40px 20px;
         }
 
-        .eyebrow {
-            color: var(--red);
+        .hero-small {
+            color: #e33450;
 
-            font-size: 12px;
-            font-weight: 600;
+            font-size: 13px;
+            font-weight: bold;
 
-            letter-spacing: 5px;
+            letter-spacing: 8px;
 
-            text-transform: uppercase;
-
-            margin-bottom: 25px;
+            margin-bottom: 20px;
         }
 
-        h1 {
+        .hero h1 {
             font-family: Georgia, "Times New Roman", serif;
 
-            font-size: clamp(55px, 9vw, 100px);
+            font-size: clamp(48px, 7vw, 92px);
 
-            font-weight: 400;
+            font-weight: normal;
+            letter-spacing: 8px;
 
-            letter-spacing: 5px;
+            margin-bottom: 22px;
 
-            line-height: 1;
-
-            margin-bottom: 30px;
+            text-shadow:
+                0 3px 20px rgba(0,0,0,0.7);
         }
 
-        .red-line {
-            width: 65px;
+        .hero-line {
+            width: 75px;
             height: 2px;
 
-            background: var(--red);
+            background: #e33450;
 
-            margin: 30px auto;
+            margin: 0 auto 25px;
         }
 
-        .hero-text {
-            max-width: 680px;
+        .hero-description {
+            max-width: 620px;
 
-            margin: 0 auto 40px auto;
-
-            color: var(--grey);
+            margin: 0 auto 32px;
 
             font-size: 18px;
+            color: #e9e9e9;
+
+            text-shadow:
+                0 2px 10px rgba(0,0,0,0.8);
         }
+
 
         /* =========================
            BOUTON
-           ========================= */
+        ========================= */
 
         .button {
             display: inline-block;
 
-            padding: 17px 35px;
+            background: rgba(0,0,0,0.88);
+            color: white;
 
-            background: var(--black);
+            padding: 16px 38px;
 
-            color: var(--white);
-
-            text-decoration: none;
-
-            font-size: 12px;
-
-            letter-spacing: 3px;
-
-            text-transform: uppercase;
-
-            transition: 0.3s;
-        }
-
-        .button:hover {
-            background: var(--red);
-            transform: translateY(-2px);
-        }
-
-        /* =========================
-           PRESENTATION
-           ========================= */
-
-        .presentation {
-            max-width: 950px;
-
-            margin: auto;
-
-            padding: 100px 25px;
-
-            text-align: center;
-        }
-
-        .section-number {
-            color: var(--red);
-
-            font-size: 12px;
+            font-size: 13px;
+            font-weight: bold;
 
             letter-spacing: 4px;
 
-            text-transform: uppercase;
+            border: 1px solid rgba(255,255,255,0.25);
 
-            margin-bottom: 15px;
+            transition: 0.3s ease;
         }
 
-        h2 {
+        .button:hover {
+            background: #e33450;
+            border-color: #e33450;
+            transform: translateY(-2px);
+        }
+
+
+        /* =========================
+           SECTION PRÉSENTATION
+        ========================= */
+
+        .presentation {
+            background: #f7f5f1;
+            color: #222;
+
+            text-align: center;
+
+            padding: 90px 20px;
+        }
+
+        .section-label {
+            color: #d51f3f;
+
+            font-size: 12px;
+            font-weight: bold;
+
+            letter-spacing: 6px;
+
+            margin-bottom: 18px;
+        }
+
+        .presentation h2,
+        .seiko h2 {
             font-family: Georgia, "Times New Roman", serif;
 
-            font-size: 42px;
+            font-size: clamp(34px, 5vw, 55px);
 
-            font-weight: 400;
+            font-weight: normal;
 
             margin-bottom: 25px;
         }
 
         .presentation p {
-            max-width: 760px;
+            max-width: 850px;
 
             margin: auto;
 
-            color: var(--grey);
-
             font-size: 17px;
+            color: #555;
         }
 
+
         /* =========================
-           SEIKO MOD
-           ========================= */
+           SECTION SEIKO MOD
+        ========================= */
 
-        .mod-section {
-            background: var(--black);
+        .seiko {
+            background: #111;
 
-            color: var(--white);
-
-            padding: 100px 25px;
+            padding: 90px 20px 100px;
 
             text-align: center;
         }
 
-        .mod-inner {
-            max-width: 900px;
-
-            margin: auto;
+        .seiko h2 {
+            color: white;
         }
 
-        .mod-section .section-number {
-            color: var(--red);
-        }
+        .seiko-intro {
+            max-width: 850px;
 
-        .mod-section h2 {
-            color: var(--white);
-        }
+            margin: 0 auto 55px;
 
-        .mod-section p {
-            max-width: 750px;
-
-            margin: auto;
-
-            color: #bdbdbd;
+            color: #c8c8c8;
 
             font-size: 17px;
         }
 
-        .mod-definition {
-            margin-top: 45px;
 
-            padding: 30px;
+        /* =========================
+           CARTES
+        ========================= */
+
+        .cards {
+            max-width: 1050px;
+
+            margin: auto;
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(2, 1fr);
+
+            gap: 25px;
+        }
+
+        .card {
+            border: 1px solid #333;
+
+            background:
+                linear-gradient(
+                    145deg,
+                    #171717,
+                    #0c0c0c
+                );
+
+            padding: 40px 35px;
+
+            text-align: left;
+
+            transition: 0.3s ease;
+        }
+
+        .card:hover {
+            border-color: #555;
+
+            transform: translateY(-4px);
+        }
+
+        .card h3 {
+            font-family: Georgia, "Times New Roman", serif;
+
+            font-size: 27px;
+
+            font-weight: normal;
+
+            margin-bottom: 18px;
+        }
+
+        .card h3::after {
+            content: "";
+
+            display: block;
+
+            width: 45px;
+            height: 2px;
+
+            background: #e33450;
+
+            margin-top: 12px;
+        }
+
+        .card p {
+            color: #bdbdbd;
+
+            font-size: 15px;
+        }
+
+
+        /* =========================
+           NH35
+        ========================= */
+
+        .nh35 {
+            max-width: 1050px;
+
+            margin: 25px auto 0;
 
             border: 1px solid #333;
 
+            padding: 40px;
+
             text-align: left;
+
+            background: #151515;
         }
 
-        .mod-definition strong {
-            display: block;
+        .nh35 h3 {
+            font-family: Georgia, "Times New Roman", serif;
 
-            color: var(--white);
+            font-size: 28px;
 
-            margin-bottom: 10px;
+            font-weight: normal;
 
-            letter-spacing: 1px;
+            margin-bottom: 15px;
         }
+
+        .nh35 p {
+            color: #bbb;
+        }
+
 
         /* =========================
            FOOTER
-           ========================= */
+        ========================= */
 
         footer {
-            background: #0b0b0b;
+            background: #080808;
 
-            color: white;
+            border-top: 1px solid #222;
 
             text-align: center;
 
-            padding: 50px 25px;
+            padding: 55px 20px;
         }
 
-        footer .brand {
+        .footer-logo {
             font-family: Georgia, "Times New Roman", serif;
 
-            font-size: 25px;
+            font-size: 30px;
 
-            letter-spacing: 5px;
-
-            margin-bottom: 10px;
+            letter-spacing: 7px;
         }
 
-        footer .mods {
-            color: var(--red);
+        .footer-mods {
+            color: #d51f3f;
 
             font-size: 11px;
 
-            letter-spacing: 5px;
+            letter-spacing: 6px;
         }
 
         footer p {
-            color: #666;
+            color: #777;
 
-            font-size: 12px;
+            font-size: 13px;
 
-            margin-top: 20px;
+            margin-top: 18px;
         }
 
-        /* =========================
-           MOBILE
-           ========================= */
 
-        @media (max-width: 700px) {
+        /* =========================
+           RESPONSIVE
+        ========================= */
+
+        @media (max-width: 750px) {
 
             header {
-                padding: 18px 20px;
+                height: 70px;
+                padding: 0 5%;
             }
 
-            .logo {
-                height: 65px;
+            .logo-main {
+                font-size: 21px;
+                letter-spacing: 5px;
             }
 
-            .instagram-link svg {
-                width: 25px;
-                height: 25px;
+            .logo-sub {
+                font-size: 9px;
+                letter-spacing: 4px;
             }
 
             .hero {
                 min-height: 570px;
 
-                padding: 70px 20px;
+                background-position: center;
             }
 
-            h1 {
-                font-size: 55px;
-                letter-spacing: 3px;
+            .hero h1 {
+                font-size: 42px;
+                letter-spacing: 4px;
             }
 
-            h2 {
-                font-size: 34px;
-            }
-
-            .hero-text {
-                font-size: 16px;
+            .hero-description {
+                font-size: 15px;
             }
 
             .presentation,
-            .mod-section {
-                padding: 75px 20px;
+            .seiko {
+                padding: 65px 20px;
             }
 
+            .cards {
+                grid-template-columns: 1fr;
+            }
+
+            .nh35 {
+                padding: 30px 25px;
+            }
         }
 
     </style>
-
 </head>
 
 
@@ -388,87 +507,77 @@
 
 
 <!-- =========================
-     HEADER
-     ========================= -->
+     EN-TÊTE
+========================= -->
 
 <header>
 
-    <div class="header-inner">
+    <!-- Cliquer sur le logo = retour accueil -->
 
-        <!-- LOGO = RETOUR ACCUEIL -->
+    <a href="index.html" class="logo">
 
-        <a href="index.html" class="home-logo">
+        <span class="logo-main">
+            COMPANY
+        </span>
 
-            <img
-                src="IMG_8767.jpg"
-                alt="Company Mods"
-                class="logo"
-            >
+        <span class="logo-sub">
+            MODS
+        </span>
 
-        </a>
+    </a>
 
 
-        <!-- INSTAGRAM -->
+    <!-- Instagram -->
 
-        <a
-            href="https://www.instagram.com/company_mods/"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="instagram-link"
-            aria-label="Instagram Company Mods"
-        >
+    <a
+        href="https://www.instagram.com/company_mods/"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="instagram"
+        aria-label="Instagram Company Mods"
+    >
 
-            <svg
-                width="28"
-                height="28"
-                viewBox="0 0 24 24"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-            >
+        <svg viewBox="0 0 24 24">
 
-                <rect
-                    x="3"
-                    y="3"
-                    width="18"
-                    height="18"
-                    rx="5"
-                    stroke="currentColor"
-                    stroke-width="1.8"
-                />
+            <rect
+                x="3"
+                y="3"
+                width="18"
+                height="18"
+                rx="5"
+            />
 
-                <circle
-                    cx="12"
-                    cy="12"
-                    r="4"
-                    stroke="currentColor"
-                    stroke-width="1.8"
-                />
+            <circle
+                cx="12"
+                cy="12"
+                r="4"
+            />
 
-                <circle
-                    cx="17.5"
-                    cy="6.5"
-                    r="1"
-                    fill="currentColor"
-                />
+            <circle
+                cx="17.5"
+                cy="6.5"
+                r="1"
+                fill="#111"
+                stroke="none"
+            />
 
-            </svg>
+        </svg>
 
-        </a>
-
-    </div>
+    </a>
 
 </header>
 
 
+
 <!-- =========================
-     ACCUEIL
-     ========================= -->
+     HERO
+========================= -->
 
 <section class="hero">
 
     <div class="hero-content">
 
-        <div class="eyebrow">
+        <div class="hero-small">
             COMPANY MODS
         </div>
 
@@ -476,23 +585,18 @@
             COMPANY MODS
         </h1>
 
-        <div class="red-line"></div>
+        <div class="hero-line"></div>
 
-        <p class="hero-text">
-
-            L'horlogerie personnalisée, pensée pour ceux
+        <p class="hero-description">
+            L’horlogerie personnalisée, pensée pour ceux
             qui souhaitent porter une montre qui leur ressemble.
-
         </p>
-
-
-        <!-- UNIQUE LIEN VERS LE MODE D'EMPLOI -->
 
         <a
             href="mode-emploi.html"
             class="button"
         >
-            Mode d'emploi
+            MODE D’EMPLOI
         </a>
 
     </div>
@@ -500,99 +604,140 @@
 </section>
 
 
+
 <!-- =========================
-     PRESENTATION
-     ========================= -->
+     PRÉSENTATION
+========================= -->
 
 <section class="presentation">
 
-    <div class="section-number">
-        L'atelier
+    <div class="section-label">
+        L’ATELIER
     </div>
 
     <h2>
-        L'univers Company Mods
+        L’univers Company Mods
     </h2>
 
     <p>
+        Company Mods est une marque dédiée à la
+        personnalisation horlogère et à la création de
+        montres uniques.
 
-        Company Mods est une marque dédiée à la personnalisation
-        horlogère et à la création de montres uniques.
-
-        Chaque modèle associe l'esthétique d'une montre personnalisée
-        à la fiabilité d'un mouvement mécanique automatique.
-
+        Chaque modèle associe une esthétique travaillée
+        à la fiabilité d’un mouvement mécanique automatique.
     </p>
 
 </section>
 
 
+
 <!-- =========================
      SEIKO MOD
-     ========================= -->
+========================= -->
 
-<section class="mod-section">
+<section class="seiko">
 
-    <div class="mod-inner">
+    <div class="section-label">
+        L’HORLOGERIE PERSONNALISÉE
+    </div>
 
-        <div class="section-number">
-            L'horlogerie personnalisée
-        </div>
+    <h2>
+        Qu’est-ce qu’une Seiko Mod ?
+    </h2>
 
-        <h2>
-            Qu'est-ce qu'une Seiko Mod ?
-        </h2>
+    <p class="seiko-intro">
 
-        <p>
+        Une Seiko Mod est une montre mécanique personnalisée
+        à partir de composants sélectionnés et assemblés afin
+        de créer une esthétique et une configuration uniques.
 
-            Une Seiko Mod est une montre mécanique personnalisée
-            à partir de composants sélectionnés et assemblés afin
-            de créer une esthétique et une configuration uniques.
+        Le terme « Mod » vient de « modification » :
+        le principe consiste à personnaliser différents
+        éléments de la montre, comme le cadran, les aiguilles,
+        le boîtier, la lunette ou le bracelet.
 
-            Le terme « Mod » vient de « modification » : le principe
-            consiste à personnaliser différents éléments de la montre,
-            comme le cadran, les aiguilles, le boîtier, la lunette
-            ou le bracelet.
-
-        </p>
+    </p>
 
 
-        <div class="mod-definition">
+    <div class="cards">
 
-            <strong>
-                LE MOUVEMENT AUTOMATIQUE
-            </strong>
+        <div class="card">
+
+            <h3>
+                Une montre unique
+            </h3>
 
             <p>
+                Chaque combinaison de composants permet de créer
+                une montre différente. Cadrans, aiguilles,
+                lunettes, boîtiers et bracelets peuvent être
+                associés afin de créer une identité propre à
+                chaque modèle.
+            </p>
 
-                Les montres Company Mods présentées ici utilisent
-                notamment le mouvement automatique NH35.
+        </div>
 
-                Ce mouvement mécanique fonctionne sans pile :
-                l'énergie est emmagasinée dans un ressort moteur
-                puis utilisée progressivement pour faire fonctionner
-                la montre.
 
+        <div class="card">
+
+            <h3>
+                L’assemblage
+            </h3>
+
+            <p>
+                Les différents composants sont sélectionnés puis
+                assemblés avec soin afin d'obtenir une montre
+                harmonieuse, fonctionnelle et personnalisée.
             </p>
 
         </div>
 
     </div>
 
+
+    <!-- NH35 -->
+
+    <div class="nh35">
+
+        <h3>
+            Le mouvement automatique NH35
+        </h3>
+
+        <p>
+
+            Les montres Company Mods peuvent notamment utiliser
+            le mouvement automatique NH35.
+
+            Ce mouvement mécanique fonctionne sans pile :
+            l’énergie est emmagasinée dans un ressort moteur
+            puis utilisée progressivement pour faire fonctionner
+            la montre.
+
+            Le mouvement peut être remonté manuellement grâce
+            à la couronne et se recharge également naturellement
+            lors du port de la montre grâce aux mouvements du
+            poignet.
+
+        </p>
+
+    </div>
+
 </section>
+
 
 
 <!-- =========================
      FOOTER
-     ========================= -->
+========================= -->
 
 <footer>
 
-    <div class="brand">
+    <div class="footer-logo">
         COMPANY
     </div>
 
-    <div class="mods">
+    <div class="footer-mods">
         MODS
     </div>
 
@@ -604,5 +749,4 @@
 
 
 </body>
-
 </html>
