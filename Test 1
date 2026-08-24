@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Comment fonctionne une montre</title>
+  <style>
+    :root {
+      --fond: #f6f3ee;
+      --texte: #1f1f1f;
+      --accent: #7a5c3d;
+      --carte: #ffffff;
+      --ombre: 0 10px 30px rgba(0,0,0,0.08);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--texte);
+      background: var(--fond);
+      line-height: 1.6;
+    }
+
+    header {
+      background: var(--carte);
+      box-shadow: var(--ombre);
+      padding: 20px 16px;
+    }
+
+    .header-inner {
+      max-width: 900px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .logo {
+      width: 80px;
+      height: 80px;
+      object-fit: contain;
+      flex-shrink: 0;
+    }
+
+    .brand {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .brand h1 {
+      margin: 0;
+      font-size: 1.8rem;
+      color: var(--accent);
+    }
+
+    .brand p {
+      margin: 4px 0 0;
+      color: #666;
+    }
+
+    main {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 32px 16px 48px;
+    }
+
+    .card {
+      background: var(--carte);
+      border-radius: 16px;
+      padding: 24px;
+      box-shadow: var(--ombre);
+    }
+
+    h2 {
+      margin-top: 0;
+      color: var(--accent);
+    }
+
+    ul {
+      padding-left: 20px;
+    }
+
+    .etapes li {
+      margin-bottom: 12px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px 16px 32px;
+      color: #777;
+      font-size: 0.95rem;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="header-inner">
+      <img class="logo" src="logo.png" alt="Logo de la marque" />
+      <div class="brand">
+        <h1>Nom de ta marque</h1>
+        <p>Une montre, simplement expliquée</p>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="card">
+      <h2>Comment fonctionne une montre mécanique ?</h2>
+      <p>
+        Une montre mécanique fonctionne grâce à une énergie stockée dans un ressort.
+        Quand on remonte la montre, ce ressort se tend et libère ensuite son énergie petit à petit.
+      </p>
+
+      <ul class="etapes">
+        <li><strong>Le ressort moteur</strong> stocke l’énergie.</li>
+        <li><strong>Le train de roues</strong> transmet cette énergie.</li>
+        <li><strong>L’échappement</strong> régule la libération de l’énergie.</li>
+        <li><strong>Le balancier</strong> bat à intervalles réguliers pour garder un rythme précis.</li>
+        <li><strong>Les aiguilles</strong> avancent pour afficher l’heure.</li>
+      </ul>
+
+      <p>
+        En résumé, la montre transforme une énergie mécanique en mouvement régulier pour indiquer le temps.
+      </p>
+    </section>
+  </main>
+
+  <footer>
+    © 2026 Nom de ta marque
+  </footer>
+
+</body>
+</html>
