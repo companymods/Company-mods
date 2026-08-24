@@ -4,13 +4,12 @@
 <head>
 
     <meta charset="UTF-8">
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Company Mods</title>
 
     <meta name="description"
-          content="Company Mods — Montres personnalisées équipées de mouvements automatiques Seiko.">
+          content="Company Mods — Montres personnalisées équipées de mouvements automatiques.">
 
     <style>
 
@@ -54,8 +53,14 @@
         .header-inner {
             max-width: 1200px;
             margin: auto;
+
             display: flex;
-            justify-content: center;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .home-logo {
+            display: flex;
             align-items: center;
         }
 
@@ -63,6 +68,23 @@
             height: 85px;
             width: auto;
             object-fit: contain;
+        }
+
+        .instagram-link {
+            color: var(--black);
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            text-decoration: none;
+
+            transition: 0.3s ease;
+        }
+
+        .instagram-link:hover {
+            color: var(--red);
+            transform: translateY(-2px);
         }
 
         /* =========================
@@ -165,7 +187,6 @@
 
         .button:hover {
             background: var(--red);
-
             transform: translateY(-2px);
         }
 
@@ -327,6 +348,11 @@
                 height: 65px;
             }
 
+            .instagram-link svg {
+                width: 25px;
+                height: 25px;
+            }
+
             .hero {
                 min-height: 570px;
 
@@ -335,7 +361,6 @@
 
             h1 {
                 font-size: 55px;
-
                 letter-spacing: 3px;
             }
 
@@ -370,11 +395,65 @@
 
     <div class="header-inner">
 
-        <img
-            src="IMG_8767.jpg"
-            alt="Company Mods"
-            class="logo"
+        <!-- LOGO = RETOUR ACCUEIL -->
+
+        <a href="index.html" class="home-logo">
+
+            <img
+                src="IMG_8767.jpg"
+                alt="Company Mods"
+                class="logo"
+            >
+
+        </a>
+
+
+        <!-- INSTAGRAM -->
+
+        <a
+            href="https://www.instagram.com/company_mods/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="instagram-link"
+            aria-label="Instagram Company Mods"
         >
+
+            <svg
+                width="28"
+                height="28"
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+            >
+
+                <rect
+                    x="3"
+                    y="3"
+                    width="18"
+                    height="18"
+                    rx="5"
+                    stroke="currentColor"
+                    stroke-width="1.8"
+                />
+
+                <circle
+                    cx="12"
+                    cy="12"
+                    r="4"
+                    stroke="currentColor"
+                    stroke-width="1.8"
+                />
+
+                <circle
+                    cx="17.5"
+                    cy="6.5"
+                    r="1"
+                    fill="currentColor"
+                />
+
+            </svg>
+
+        </a>
 
     </div>
 
@@ -382,7 +461,7 @@
 
 
 <!-- =========================
-     PAGE D'ACCUEIL
+     ACCUEIL
      ========================= -->
 
 <section class="hero">
@@ -406,7 +485,8 @@
 
         </p>
 
-        <!-- UNIQUE LIEN DU SITE -->
+
+        <!-- UNIQUE LIEN VERS LE MODE D'EMPLOI -->
 
         <a
             href="mode-emploi.html"
