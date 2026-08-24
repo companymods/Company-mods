@@ -1,19 +1,18 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
+
     <meta charset="UTF-8">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>COMPANY MODS — Mode d'emploi</title>
+    <title>Company Mods — Mode d'emploi</title>
 
     <meta name="description"
-          content="Mode d'emploi des montres COMPANY MODS équipées du mouvement automatique NH35.">
+          content="Mode d'emploi des montres Company Mods équipées du mouvement automatique NH35.">
 
     <style>
-
-        /* =====================================================
-           COMPANY MODS — STYLE
-           ===================================================== */
 
         :root {
             --black: #111111;
@@ -51,6 +50,7 @@
             background: var(--white);
             border-bottom: 1px solid var(--border);
             padding: 25px 40px;
+
             position: sticky;
             top: 0;
             z-index: 100;
@@ -59,9 +59,15 @@
         .header-inner {
             max-width: 1200px;
             margin: auto;
+
             display: flex;
             align-items: center;
             justify-content: space-between;
+        }
+
+        .home-logo {
+            display: flex;
+            align-items: center;
         }
 
         .logo {
@@ -70,22 +76,21 @@
             object-fit: contain;
         }
 
-        nav {
-            display: flex;
-            gap: 30px;
-        }
-
-        nav a {
+        .instagram-link {
             color: var(--black);
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
             text-decoration: none;
-            font-size: 13px;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            transition: 0.3s;
+
+            transition: 0.3s ease;
         }
 
-        nav a:hover {
+        .instagram-link:hover {
             color: var(--red);
+            transform: translateY(-2px);
         }
 
         /* =====================================================
@@ -94,16 +99,22 @@
 
         .hero {
             min-height: 500px;
+
             display: flex;
             align-items: center;
             justify-content: center;
+
             text-align: center;
+
             padding: 80px 25px;
+
             background:
-                radial-gradient(circle at center,
-                #ffffff 0%,
-                #f7f6f2 55%,
-                #ebeae6 100%);
+                radial-gradient(
+                    circle at center,
+                    #ffffff 0%,
+                    #f7f6f2 55%,
+                    #ebeae6 100%
+                );
         }
 
         .hero-content {
@@ -112,33 +123,48 @@
 
         .eyebrow {
             font-size: 12px;
+
             letter-spacing: 5px;
+
             text-transform: uppercase;
+
             color: var(--red);
+
             font-weight: 600;
+
             margin-bottom: 20px;
         }
 
         h1 {
             font-family: Georgia, "Times New Roman", serif;
+
             font-size: clamp(50px, 8vw, 92px);
+
             font-weight: 400;
+
             letter-spacing: 4px;
+
             line-height: 1;
+
             margin-bottom: 25px;
         }
 
         .hero p {
             max-width: 650px;
+
             margin: auto;
+
             color: var(--grey);
+
             font-size: 17px;
         }
 
         .red-line {
             width: 60px;
             height: 2px;
+
             background: var(--red);
+
             margin: 30px auto;
         }
 
@@ -148,7 +174,9 @@
 
         main {
             max-width: 1100px;
+
             margin: auto;
+
             padding: 80px 25px;
         }
 
@@ -158,29 +186,41 @@
 
         .section-number {
             font-size: 12px;
+
             color: var(--red);
+
             letter-spacing: 4px;
+
             margin-bottom: 10px;
+
             text-transform: uppercase;
         }
 
         h2 {
             font-family: Georgia, "Times New Roman", serif;
+
             font-weight: 400;
+
             font-size: 42px;
+
             margin-bottom: 20px;
         }
 
         h3 {
             font-family: Georgia, "Times New Roman", serif;
+
             font-size: 26px;
+
             font-weight: 400;
+
             margin-bottom: 15px;
         }
 
         .intro {
             color: var(--grey);
+
             max-width: 750px;
+
             font-size: 17px;
         }
 
@@ -190,30 +230,43 @@
 
         .movement-card {
             margin-top: 45px;
+
             background: var(--black);
+
             color: white;
+
             padding: 55px;
+
             display: grid;
+
             grid-template-columns: 1fr 1fr;
+
             gap: 50px;
+
             align-items: center;
         }
 
         .movement-info h3 {
             color: white;
+
             font-size: 34px;
         }
 
         .movement-info p {
             color: #bdbdbd;
+
             margin-bottom: 25px;
         }
 
         .spec {
             display: flex;
+
             justify-content: space-between;
+
             padding: 13px 0;
+
             border-bottom: 1px solid #333;
+
             font-size: 14px;
         }
 
@@ -227,17 +280,25 @@
 
         .watch-area {
             display: flex;
+
             justify-content: center;
+
             align-items: center;
         }
 
         .watch {
             width: 300px;
+
             height: 300px;
+
             border-radius: 50%;
+
             border: 14px solid #222;
+
             background: #fdfdfd;
+
             position: relative;
+
             box-shadow:
                 0 0 0 5px #777,
                 0 20px 50px rgba(0,0,0,.3);
@@ -245,64 +306,105 @@
 
         .watch::before {
             content: "";
+
             position: absolute;
+
             width: 30px;
+
             height: 30px;
+
             right: -42px;
+
             top: 50%;
+
             transform: translateY(-50%);
+
             border-radius: 5px;
+
             background: #555;
         }
 
         .watch-center {
             position: absolute;
+
             width: 12px;
+
             height: 12px;
+
             background: var(--red);
+
             border-radius: 50%;
+
             left: 50%;
+
             top: 50%;
+
             transform: translate(-50%, -50%);
+
             z-index: 5;
         }
 
         .hand {
             position: absolute;
+
             background: #111;
+
             left: 50%;
+
             bottom: 50%;
+
             transform-origin: bottom center;
+
             border-radius: 10px;
         }
 
         .hour {
             width: 7px;
+
             height: 80px;
-            transform: translateX(-50%) rotate(135deg);
+
+            transform:
+                translateX(-50%)
+                rotate(135deg);
         }
 
         .minute {
             width: 5px;
+
             height: 105px;
-            transform: translateX(-50%) rotate(20deg);
+
+            transform:
+                translateX(-50%)
+                rotate(20deg);
         }
 
         .second {
             width: 2px;
+
             height: 115px;
+
             background: var(--red);
-            transform: translateX(-50%) rotate(250deg);
+
+            transform:
+                translateX(-50%)
+                rotate(250deg);
         }
 
         .date-window {
             position: absolute;
+
             right: 52px;
+
             top: 50%;
+
             transform: translateY(-50%);
+
             border: 1px solid #aaa;
+
             padding: 5px 8px;
+
             font-size: 13px;
+
             background: white;
         }
 
@@ -312,33 +414,50 @@
 
         .positions {
             margin-top: 45px;
+
             display: grid;
+
             grid-template-columns: repeat(3, 1fr);
+
             gap: 20px;
         }
 
         .position {
             background: white;
+
             border: 1px solid var(--border);
+
             padding: 30px;
+
             transition: .3s;
         }
 
         .position:hover {
             transform: translateY(-5px);
-            box-shadow: 0 15px 35px rgba(0,0,0,.08);
+
+            box-shadow:
+                0 15px 35px rgba(0,0,0,.08);
         }
 
         .position-number {
             width: 42px;
+
             height: 42px;
+
             border-radius: 50%;
+
             background: var(--black);
+
             color: white;
+
             display: flex;
+
             align-items: center;
+
             justify-content: center;
+
             margin-bottom: 20px;
+
             font-family: Georgia, serif;
         }
 
@@ -348,6 +467,7 @@
 
         .position p {
             color: var(--grey);
+
             font-size: 14px;
         }
 
@@ -357,20 +477,31 @@
 
         .step {
             background: white;
+
             border: 1px solid var(--border);
+
             margin-top: 25px;
+
             display: grid;
+
             grid-template-columns: 150px 1fr;
+
             overflow: hidden;
         }
 
         .step-number {
             background: var(--black);
+
             color: white;
+
             display: flex;
+
             align-items: center;
+
             justify-content: center;
+
             font-family: Georgia, serif;
+
             font-size: 35px;
         }
 
@@ -380,13 +511,17 @@
 
         .step-content p {
             color: var(--grey);
+
             margin-bottom: 15px;
         }
 
         .instruction {
             border-left: 3px solid var(--red);
+
             padding-left: 20px;
+
             margin-top: 20px;
+
             font-size: 14px;
         }
 
@@ -396,15 +531,21 @@
 
         .diagram {
             background: #f5f4f0;
+
             padding: 30px;
+
             margin-top: 25px;
+
             display: flex;
+
             justify-content: center;
+
             overflow: hidden;
         }
 
         .diagram svg {
             max-width: 100%;
+
             height: auto;
         }
 
@@ -414,19 +555,25 @@
 
         .warning {
             margin-top: 35px;
+
             padding: 30px;
+
             background: #fff;
+
             border-left: 4px solid var(--red);
         }
 
         .warning strong {
             display: block;
+
             margin-bottom: 8px;
+
             letter-spacing: 1px;
         }
 
         .warning p {
             color: var(--grey);
+
             font-size: 14px;
         }
 
@@ -436,24 +583,31 @@
 
         .features {
             display: grid;
+
             grid-template-columns: repeat(3, 1fr);
+
             gap: 25px;
+
             margin-top: 40px;
         }
 
         .feature {
             padding: 35px 25px;
+
             background: white;
+
             border: 1px solid var(--border);
         }
 
         .feature-icon {
             font-size: 30px;
+
             margin-bottom: 15px;
         }
 
         .feature p {
             color: var(--grey);
+
             font-size: 14px;
         }
 
@@ -463,27 +617,37 @@
 
         footer {
             background: var(--black);
+
             color: white;
+
             padding: 70px 25px;
+
             text-align: center;
         }
 
         footer .brand {
             font-family: Georgia, serif;
+
             font-size: 28px;
+
             letter-spacing: 4px;
+
             margin-bottom: 15px;
         }
 
         footer .mods {
             color: var(--red);
+
             letter-spacing: 5px;
+
             font-size: 12px;
         }
 
         footer p {
             color: #777;
+
             margin-top: 25px;
+
             font-size: 12px;
         }
 
@@ -497,20 +661,18 @@
                 padding: 15px 20px;
             }
 
-            .header-inner {
-                justify-content: center;
-            }
-
             .logo {
                 height: 60px;
             }
 
-            nav {
-                display: none;
+            .instagram-link svg {
+                width: 25px;
+                height: 25px;
             }
 
             .hero {
                 min-height: 430px;
+
                 padding: 60px 20px;
             }
 
@@ -528,6 +690,7 @@
 
             .movement-card {
                 grid-template-columns: 1fr;
+
                 padding: 30px;
             }
 
@@ -546,6 +709,7 @@
 
             .watch {
                 width: 240px;
+
                 height: 240px;
             }
 
@@ -560,13 +724,16 @@
             .second {
                 height: 95px;
             }
+
         }
 
     </style>
+
 </head>
 
 
 <body>
+
 
 <!-- =====================================================
      HEADER
@@ -576,19 +743,65 @@
 
     <div class="header-inner">
 
-        <!-- TON LOGO -->
-        <img
-            src="IMG_8767.jpg"
-            alt="COMPANY MODS"
-            class="logo"
+        <!-- LOGO = RETOUR ACCUEIL -->
+
+        <a href="index.html" class="home-logo">
+
+            <img
+                src="IMG_8767.jpg"
+                alt="Company Mods"
+                class="logo"
+            >
+
+        </a>
+
+
+        <!-- INSTAGRAM -->
+
+        <a
+            href="https://www.instagram.com/company_mods/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="instagram-link"
+            aria-label="Instagram Company Mods"
         >
 
-        <nav>
-            <a href="#mouvement">Le mouvement</a>
-            <a href="#remontage">Remontage</a>
-            <a href="#date">Date</a>
-            <a href="#heure">Heure</a>
-        </nav>
+            <svg
+                width="28"
+                height="28"
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+            >
+
+                <rect
+                    x="3"
+                    y="3"
+                    width="18"
+                    height="18"
+                    rx="5"
+                    stroke="currentColor"
+                    stroke-width="1.8"
+                />
+
+                <circle
+                    cx="12"
+                    cy="12"
+                    r="4"
+                    stroke="currentColor"
+                    stroke-width="1.8"
+                />
+
+                <circle
+                    cx="17.5"
+                    cy="6.5"
+                    r="1"
+                    fill="currentColor"
+                />
+
+            </svg>
+
+        </a>
 
     </div>
 
@@ -648,7 +861,7 @@
     </p>
 
 
-    <div class="movement-card" id="mouvement">
+    <div class="movement-card">
 
         <div class="movement-info">
 
@@ -690,7 +903,9 @@
             <div class="watch">
 
                 <div class="hand hour"></div>
+
                 <div class="hand minute"></div>
+
                 <div class="hand second"></div>
 
                 <div class="date-window">
@@ -791,7 +1006,7 @@
      REMONTAGE
      ===================================================== -->
 
-<section id="remontage">
+<section>
 
     <div class="section-number">
         03 — Remontage
@@ -830,7 +1045,6 @@
                 <svg width="500" height="160"
                      viewBox="0 0 500 160">
 
-                    <!-- boîtier -->
                     <rect x="100" y="40"
                           width="300"
                           height="80"
@@ -839,14 +1053,12 @@
                           stroke="#111"
                           stroke-width="6"/>
 
-                    <!-- couronne -->
                     <rect x="395" y="60"
                           width="45"
                           height="40"
                           rx="8"
                           fill="#777"/>
 
-                    <!-- flèche -->
                     <line x1="455" y1="80"
                           x2="410" y2="80"
                           stroke="#c9364d"
@@ -879,7 +1091,7 @@
         <div class="step-content">
 
             <h3>
-                Tournez la couronne dans le sens du remontage
+                Tournez la couronne
             </h3>
 
             <p>
@@ -942,9 +1154,9 @@
             </h3>
 
             <p>
-                Une fois portée au poignet, les mouvements naturels
-                de votre bras font tourner le rotor du mouvement.
-                Celui-ci remonte progressivement le ressort moteur.
+                Les mouvements naturels de votre poignet font tourner
+                le rotor du mouvement. Celui-ci remonte progressivement
+                le ressort moteur.
             </p>
 
         </div>
@@ -958,7 +1170,7 @@
      DATE
      ===================================================== -->
 
-<section id="date">
+<section>
 
     <div class="section-number">
         04 — Réglage de la date
@@ -1009,9 +1221,7 @@
             </h3>
 
             <p>
-                Sur le NH35, tournez la couronne dans le sens
-                indiqué par le mécanisme pour faire avancer
-                la date.
+                Tournez la couronne pour faire avancer la date.
             </p>
 
             <div class="diagram">
@@ -1086,7 +1296,7 @@
      HEURE
      ===================================================== -->
 
-<section id="heure">
+<section>
 
     <div class="section-number">
         05 — Réglage de l'heure
@@ -1132,7 +1342,6 @@
                             stroke="#111"
                             stroke-width="6"/>
 
-                    <!-- aiguilles -->
                     <line x1="250"
                           y1="110"
                           x2="250"
@@ -1147,7 +1356,6 @@
                           stroke="#111"
                           stroke-width="5"/>
 
-                    <!-- couronne -->
                     <rect x="330"
                           y="95"
                           width="60"
@@ -1310,7 +1518,7 @@
 
 
 <!-- =====================================================
-     RAPPEL RAPIDE
+     RAPPEL
      ===================================================== -->
 
 <section>
@@ -1424,4 +1632,5 @@
 
 
 </body>
+
 </html>
