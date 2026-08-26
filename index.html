@@ -9,7 +9,6 @@
         name="viewport"
         content="width=device-width, initial-scale=1.0"
     >
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Company Mods</title>
 
@@ -35,7 +34,6 @@
             scroll-behavior: smooth;
         }
 
-        html,
         body {
             font-family:
                 Arial,
@@ -52,16 +50,8 @@
         a {
             text-decoration: none;
             color: inherit;
-            width: 100%;
-            height: 100%;
-            overflow: hidden;
-            font-family: Arial, Helvetica, sans-serif;
-            background: #050505;
         }
 
-        /* ========================================
-           PAGE PRINCIPALE
-        ======================================== */
 
         /* ==================================================
            HEADER
@@ -71,20 +61,12 @@
 
             height: 78px;
 
-        .hero {
-            position: relative;
             width: 100%;
-            height: 100vh;
 
             background: #f8f7f4;
-            background-image: url("accueil.png");
-            background-size: cover;
-            background-position: center center;
-            background-repeat: no-repeat;
 
             display: flex;
 
-            flex-direction: column;
             align-items: center;
 
             justify-content: space-between;
@@ -96,36 +78,20 @@
             z-index: 20;
 
             border-bottom: 1px solid #e5e3df;
-            justify-content: center;
         }
 
 
         /* LOGO EN HAUT À GAUCHE */
 
         .header-logo {
-        /* ========================================
-           ASSOMBRISSEMENT GÉNÉRAL
-        ======================================== */
 
             display: flex;
 
             align-items: center;
-        .hero::before {
-            content: "";
-            position: absolute;
-            inset: 0;
 
             height: 100%;
-            background:
-                linear-gradient(
-                    to bottom,
-                    rgba(0,0,0,0.15),
-                    rgba(0,0,0,0.20) 50%,
-                    rgba(0,0,0,0.65) 100%
-                );
 
             cursor: pointer;
-            z-index: 1;
         }
 
         .header-logo img {
@@ -133,76 +99,39 @@
             width: auto;
 
             max-width: 180px;
-        /* ========================================
-           LUMIÈRE CENTRALE
-        ======================================== */
 
             max-height: 62px;
-        .hero::after {
-            content: "";
-            position: absolute;
-            left: 50%;
-            top: 40%;
 
             display: block;
-            width: 70%;
-            height: 55%;
 
             transition:
                 transform 0.3s ease,
                 opacity 0.3s ease;
         }
-            transform: translate(-50%, -50%);
 
         .header-logo:hover img {
-            background:
-                radial-gradient(
-                    ellipse,
-                    rgba(255,255,255,0.28) 0%,
-                    rgba(255,255,255,0.12) 30%,
-                    rgba(255,255,255,0.04) 52%,
-                    rgba(255,255,255,0) 75%
-                );
 
             transform: scale(1.04);
-            z-index: 2;
 
             opacity: 0.85;
-            pointer-events: none;
         }
 
 
         /* ==================================================
            INSTAGRAM
         ================================================== */
-        /* ========================================
-           LOGO EN HAUT À GAUCHE
-        ======================================== */
 
         .instagram {
-        .site-header {
-            position: absolute;
 
             width: 35px;
-            top: 25px;
-            left: 30px;
 
             height: 35px;
-            z-index: 20;
-        }
 
             display: flex;
-        .logo-link {
-            display: block;
-        }
 
             align-items: center;
-        .site-logo {
-            width: 105px;
-            height: auto;
 
             justify-content: center;
-            display: block;
 
             transition:
                 transform 0.3s ease,
@@ -227,9 +156,6 @@
             stroke: #111;
 
             stroke-width: 1.8;
-        .logo-link:hover .site-logo {
-            transform: scale(1.05);
-            opacity: 0.85;
         }
 
 
@@ -238,11 +164,7 @@
         ================================================== */
 
         .hero {
-        /* ========================================
-           CONTENU CENTRAL
-        ======================================== */
 
-        .hero-content {
             position: relative;
 
             width: 100%;
@@ -254,7 +176,7 @@
             overflow: hidden;
 
             background-image:
-                url("accueil.png");
+                url("hero-company-mods.png");
 
             background-size: cover;
 
@@ -273,10 +195,8 @@
             content: "";
 
             position: absolute;
-            z-index: 5;
 
             inset: 0;
-            width: 100%;
 
             background:
                 linear-gradient(
@@ -286,18 +206,13 @@
                     rgba(0,0,0,0.02) 70%,
                     rgba(0,0,0,0.15)
                 );
-            display: flex;
-            flex-direction: column;
-            align-items: center;
 
             pointer-events: none;
-            text-align: center;
 
             z-index: 1;
-            padding-top: 20px;
         }
 
-        
+
         /* ==================================================
            ZONE CENTRALE
            
@@ -307,26 +222,16 @@
         ================================================== */
 
         .hero-center {
-        /* ========================================
-           LOGO CENTRAL
-        ======================================== */
 
             position: absolute;
-        .center-logo {
-            width: min(330px, 38vw);
-            height: auto;
 
             left: 50%;
 
             top: 50%;
 
             transform: translate(-50%, -50%);
-            margin-bottom: 55px;
 
             width: min(850px, 75vw);
-            filter:
-                drop-shadow(0 4px 12px rgba(255,255,255,0.18))
-                drop-shadow(0 8px 25px rgba(0,0,0,0.65));
 
             height: 85%;
 
@@ -341,28 +246,22 @@
             justify-content: flex-end;
 
             padding-bottom: 8%;
-            opacity: 0.96;
         }
 
 
         /* ==================================================
-        /* ========================================
            BOUTONS
         ================================================== */
 
         .hero-buttons {
-        ======================================== */
 
-        .buttons {
             display: flex;
 
             justify-content: center;
 
-            flex-direction: column;
             align-items: center;
 
             gap: 25px;
-            gap: 15px;
 
             width: 100%;
         }
@@ -379,7 +278,6 @@
             height: 58px;
 
             min-width: 205px;
-            min-width: 245px;
 
             padding: 0 30px;
 
@@ -387,15 +285,11 @@
 
             background:
                 rgba(10,10,10,0.78);
-            background: rgba(5,5,5,0.82);
 
             color: white;
-            color: #ffffff;
 
             font-size: 12px;
-            text-decoration: none;
 
-            font-size: 12px;
             font-weight: bold;
 
             letter-spacing: 2.5px;
@@ -404,24 +298,66 @@
                 background 0.3s ease,
                 border 0.3s ease,
                 transform 0.3s ease;
-                transform 0.3s ease,
-                box-shadow 0.3s ease;
         }
 
-
-        /* ========================================
-           EFFET AU SURVOL
-        ======================================== */
 
         .hero-button:hover {
 
             background: #d51f3f;
-@@ -310,738 +229,186 @@
+
+            border-color: #d51f3f;
+
             transform: translateY(-3px);
 
             box-shadow:
                 0 8px 25px rgba(0,0,0,0.35);
         }
+
+
+        .hero-button {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    height: 58px;
+
+    min-width: 205px;
+
+    padding: 0 30px;
+
+    border: 1px solid rgba(255,255,255,0.65);
+
+    background: rgba(10,10,10,0.78);
+
+    color: white;
+
+    font-size: 12px;
+
+    font-weight: bold;
+
+    letter-spacing: 2.5px;
+
+    transition:
+        background 0.3s ease,
+        border 0.3s ease,
+        transform 0.3s ease;
+}
+
+
+.hero-button:hover {
+
+    background: #d51f3f;
+
+    border-color: #d51f3f;
+
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 8px 25px rgba(0,0,0,0.35);
+}
 
 
         /* ==================================================
@@ -451,7 +387,6 @@
             letter-spacing: 5px;
 
             margin-bottom: 18px;
-                0 8px 25px rgba(0,0,0,0.45);
         }
 
 
@@ -548,14 +483,9 @@
 
             gap: 25px;
         }
-        /* ========================================
-           INSTAGRAM
-        ======================================== */
 
-        .instagram {
 
         .card {
-            margin-top: 28px;
 
             background:
                 linear-gradient(
@@ -563,16 +493,12 @@
                     #1b1b1b,
                     #0d0d0d
                 );
-            color: rgba(255,255,255,0.75);
 
             border: 1px solid #333;
-            text-decoration: none;
 
             padding: 40px;
-            font-size: 12px;
 
             text-align: left;
-            letter-spacing: 2px;
 
             transition:
                 transform 0.3s ease,
@@ -698,13 +624,10 @@
             font-size: 30px;
 
             letter-spacing: 7px;
-                color 0.3s ease,
-                transform 0.3s ease;
         }
 
 
         .footer-mods {
-        .instagram:hover {
 
             color: #d51f3f;
 
@@ -721,12 +644,10 @@
             font-size: 13px;
 
             margin-top: 18px;
-            transform: translateY(-2px);
         }
 
 
         /* ==================================================
-        /* ========================================
            VERSION MOBILE
         ================================================== */
 
@@ -750,17 +671,12 @@
 
 
             .hero {
-        ======================================== */
 
                 height: 700px;
-        @media (max-width: 700px) {
 
                 min-height: 700px;
 
                 background-position: center center;
-            .site-header {
-                top: 18px;
-                left: 18px;
             }
 
 
@@ -771,12 +687,8 @@
                 height: 90%;
 
                 padding-bottom: 8%;
-            .site-logo {
-                width: 80px;
             }
 
-            .center-logo {
-                width: 240px;
 
             .hero-buttons {
 
@@ -785,13 +697,10 @@
                 gap: 10px;
 
                 width: 90%;
-                margin-bottom: 40px;
             }
 
 
             .hero-button {
-                min-width: 210px;
-                height: 52px;
 
                 width: 100%;
 
@@ -842,15 +751,12 @@
                 min-height: 650px;
 
                 background-position: center center;
-                font-size: 10px;
             }
 
 
             .hero-center {
 
                 padding-bottom: 5%;
-            .buttons {
-                gap: 12px;
             }
 
 
@@ -859,8 +765,6 @@
                 font-size: 10px;
 
                 letter-spacing: 2px;
-            .instagram {
-                margin-top: 22px;
             }
 
         }
@@ -878,47 +782,31 @@
 ===================================================== -->
 
 <header>
-    <!-- ========================================
-         PAGE D'ACCUEIL
-    ======================================== -->
 
-    <main class="hero">
 
     <!--
         Logo Company Mods
 
         Le clic renvoie toujours vers la page d'accueil.
     -->
-        <!-- ====================================
-             LOGO EN HAUT À GAUCHE
-        ===================================== -->
 
     <a
         href="index.html"
         class="header-logo"
         aria-label="Retour à l'accueil Company Mods"
     >
-        <header class="site-header">
 
         <img
             src="logo-company-mods.png"
             alt="Company Mods"
         >
-            <a href="index.html" class="logo-link">
 
     </a>
-                <img
-                    src="logo.png"
-                    alt="Company Mods"
-                    class="site-logo"
-                >
 
-            </a>
 
     <!--
         Instagram Company Mods
     -->
-        </header>
 
     <a
         href="https://www.instagram.com/company_mods/"
@@ -937,16 +825,12 @@
                 height="18"
                 rx="5"
             ></rect>
-        <!-- ====================================
-             CONTENU CENTRAL
-        ===================================== -->
 
             <circle
                 cx="12"
                 cy="12"
                 r="4"
             ></circle>
-        <div class="hero-content">
 
             <circle
                 cx="17.5"
@@ -957,39 +841,22 @@
             ></circle>
 
         </svg>
-            <!-- LOGO COMPANY MODS AU CENTRE -->
 
     </a>
-            <img
-                src="logo.png"
-                alt="Company Mods"
-                class="center-logo"
-            >
 
 </header>
 
 
-            <!-- =================================
-                 LES TROIS BOUTONS
-            ================================== -->
 
 <!-- =====================================================
      HERO
 ===================================================== -->
-            <div class="buttons">
 
 <section class="hero">
 
-                <!-- PERSONNALISER -->
 
     <!--
         L'image hero-company-mods.png contient :
-                <a
-                    href="personnaliser.html"
-                    class="hero-button"
-                >
-                    PERSONNALISER UN MODÈLE
-                </a>
 
         - la montre à gauche
         - la montre à droite
@@ -999,32 +866,17 @@
 
         Elle est utilisée comme véritable bandeau de la page.
     -->
-                <!-- MODE D'EMPLOI -->
 
-                <a
-                    href="mode-emploi.html"
-                    class="hero-button"
-                >
-                    MODE D'EMPLOI
-                </a>
 
     <div class="hero-center">
 
-                <!-- CONTACT -->
 
         <div class="hero-buttons">
-                <a
-                    href="contact.html"
-                    class="hero-button"
-                >
-                    CONTACT
-                </a>
 
 
             <!-- =========================================
                  1 — PERSONNALISER
             ========================================== -->
-            </div>
 
             <a
                 href="personnaliser.html"
@@ -1037,17 +889,10 @@
             <!-- =========================================
                  2 — MODE D'EMPLOI
             ========================================== -->
-            <!-- =================================
-                 INSTAGRAM
-            ================================== -->
 
             <a
                 href="mode-emploi.html"
                 class="hero-button"
-                href="https://www.instagram.com/company_mods/"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="instagram"
             >
                 MODE D’EMPLOI
             </a>
@@ -1062,7 +907,6 @@
                 class="hero-button"
             >
                 CONTACT
-                INSTAGRAM
             </a>
 
 
@@ -1242,7 +1086,6 @@
 
 
 </footer>
-    </main>
 
 
 </body>
