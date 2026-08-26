@@ -1,12 +1,29 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
+
     <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Company Mods</title>
 
+    <meta
+        name="description"
+        content="Company Mods — Horlogerie personnalisée"
+    >
+
+
     <style>
+
+        /* ==================================================
+           RESET
+        ================================================== */
 
         * {
             margin: 0;
@@ -14,8 +31,27 @@
             box-sizing: border-box;
         }
 
+        html {
+            scroll-behavior: smooth;
+        }
+
         html,
         body {
+            font-family:
+                Arial,
+                Helvetica,
+                sans-serif;
+
+            background: #0b0b0b;
+
+            color: white;
+
+            overflow-x: hidden;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
             width: 100%;
             height: 100%;
             overflow: hidden;
@@ -27,32 +63,59 @@
            PAGE PRINCIPALE
         ======================================== */
 
+        /* ==================================================
+           HEADER
+        ================================================== */
+
+        header {
+
+            height: 78px;
+
         .hero {
             position: relative;
             width: 100%;
             height: 100vh;
 
+            background: #f8f7f4;
             background-image: url("accueil.png");
             background-size: cover;
             background-position: center center;
             background-repeat: no-repeat;
 
             display: flex;
+
             flex-direction: column;
             align-items: center;
+
+            justify-content: space-between;
+
+            padding: 0 5%;
+
+            position: relative;
+
+            z-index: 20;
+
+            border-bottom: 1px solid #e5e3df;
             justify-content: center;
         }
 
 
+        /* LOGO EN HAUT À GAUCHE */
+
+        .header-logo {
         /* ========================================
            ASSOMBRISSEMENT GÉNÉRAL
         ======================================== */
 
+            display: flex;
+
+            align-items: center;
         .hero::before {
             content: "";
             position: absolute;
             inset: 0;
 
+            height: 100%;
             background:
                 linear-gradient(
                     to bottom,
@@ -61,25 +124,37 @@
                     rgba(0,0,0,0.65) 100%
                 );
 
+            cursor: pointer;
             z-index: 1;
         }
 
+        .header-logo img {
 
+            width: auto;
+
+            max-width: 180px;
         /* ========================================
            LUMIÈRE CENTRALE
         ======================================== */
 
+            max-height: 62px;
         .hero::after {
             content: "";
             position: absolute;
             left: 50%;
             top: 40%;
 
+            display: block;
             width: 70%;
             height: 55%;
 
+            transition:
+                transform 0.3s ease,
+                opacity 0.3s ease;
+        }
             transform: translate(-50%, -50%);
 
+        .header-logo:hover img {
             background:
                 radial-gradient(
                     ellipse,
@@ -89,33 +164,44 @@
                     rgba(255,255,255,0) 75%
                 );
 
+            transform: scale(1.04);
             z-index: 2;
 
+            opacity: 0.85;
             pointer-events: none;
         }
 
 
+        /* ==================================================
+           INSTAGRAM
+        ================================================== */
         /* ========================================
            LOGO EN HAUT À GAUCHE
         ======================================== */
 
+        .instagram {
         .site-header {
             position: absolute;
 
+            width: 35px;
             top: 25px;
             left: 30px;
 
+            height: 35px;
             z-index: 20;
         }
 
+            display: flex;
         .logo-link {
             display: block;
         }
 
+            align-items: center;
         .site-logo {
             width: 105px;
             height: auto;
 
+            justify-content: center;
             display: block;
 
             transition:
@@ -123,12 +209,35 @@
                 opacity 0.3s ease;
         }
 
+        .instagram:hover {
+
+            transform: scale(1.12);
+
+            opacity: 0.65;
+        }
+
+        .instagram svg {
+
+            width: 28px;
+
+            height: 28px;
+
+            fill: none;
+
+            stroke: #111;
+
+            stroke-width: 1.8;
         .logo-link:hover .site-logo {
             transform: scale(1.05);
             opacity: 0.85;
         }
 
 
+        /* ==================================================
+           HERO
+        ================================================== */
+
+        .hero {
         /* ========================================
            CONTENU CENTRAL
         ======================================== */
@@ -136,71 +245,154 @@
         .hero-content {
             position: relative;
 
-            z-index: 5;
-
             width: 100%;
 
+            height: calc(100vh - 78px);
+
+            min-height: 650px;
+
+            overflow: hidden;
+
+            background-image:
+                url("accueil.png");
+
+            background-size: cover;
+
+            background-position: center center;
+
+            background-repeat: no-repeat;
+        }
+
+
+        /* ==================================================
+           LÉGER ASSOMBRISSEMENT
+        ================================================== */
+
+        .hero::after {
+
+            content: "";
+
+            position: absolute;
+            z-index: 5;
+
+            inset: 0;
+            width: 100%;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    rgba(0,0,0,0.15),
+                    rgba(0,0,0,0.02) 30%,
+                    rgba(0,0,0,0.02) 70%,
+                    rgba(0,0,0,0.15)
+                );
             display: flex;
             flex-direction: column;
             align-items: center;
 
+            pointer-events: none;
             text-align: center;
 
+            z-index: 1;
             padding-top: 20px;
         }
 
+        
+        /* ==================================================
+           ZONE CENTRALE
+           
+           Le visuel contient déjà le logo et la présentation.
+           Cette zone permet de conserver une belle lisibilité
+           sur toutes les tailles d'écran.
+        ================================================== */
 
+        .hero-center {
         /* ========================================
            LOGO CENTRAL
         ======================================== */
 
+            position: absolute;
         .center-logo {
             width: min(330px, 38vw);
             height: auto;
 
+            left: 50%;
+
+            top: 50%;
+
+            transform: translate(-50%, -50%);
             margin-bottom: 55px;
 
+            width: min(850px, 75vw);
             filter:
                 drop-shadow(0 4px 12px rgba(255,255,255,0.18))
                 drop-shadow(0 8px 25px rgba(0,0,0,0.65));
 
+            height: 85%;
+
+            z-index: 3;
+
+            display: flex;
+
+            flex-direction: column;
+
+            align-items: center;
+
+            justify-content: flex-end;
+
+            padding-bottom: 8%;
             opacity: 0.96;
         }
 
 
+        /* ==================================================
         /* ========================================
            BOUTONS
+        ================================================== */
+
+        .hero-buttons {
         ======================================== */
 
         .buttons {
             display: flex;
 
+            justify-content: center;
+
             flex-direction: column;
             align-items: center;
 
+            gap: 25px;
             gap: 15px;
 
             width: 100%;
         }
+
 
         .hero-button {
 
             display: flex;
 
             align-items: center;
+
             justify-content: center;
 
             height: 58px;
+
+            min-width: 205px;
             min-width: 245px;
 
             padding: 0 30px;
 
             border: 1px solid rgba(255,255,255,0.65);
 
+            background:
+                rgba(10,10,10,0.78);
             background: rgba(5,5,5,0.82);
 
+            color: white;
             color: #ffffff;
 
+            font-size: 12px;
             text-decoration: none;
 
             font-size: 12px;
@@ -211,6 +403,7 @@
             transition:
                 background 0.3s ease,
                 border 0.3s ease,
+                transform 0.3s ease;
                 transform 0.3s ease,
                 box-shadow 0.3s ease;
         }
@@ -223,56 +416,361 @@
         .hero-button:hover {
 
             background: #d51f3f;
-
-            border-color: #d51f3f;
-
+@@ -310,738 +229,186 @@
             transform: translateY(-3px);
 
             box-shadow:
+                0 8px 25px rgba(0,0,0,0.35);
+        }
+
+
+        /* ==================================================
+           PRÉSENTATION
+        ================================================== */
+
+        .presentation {
+
+            background: #f7f5f1;
+
+            color: #222;
+
+            text-align: center;
+
+            padding: 100px 25px;
+        }
+
+
+        .section-label {
+
+            color: #d51f3f;
+
+            font-size: 11px;
+
+            font-weight: bold;
+
+            letter-spacing: 5px;
+
+            margin-bottom: 18px;
                 0 8px 25px rgba(0,0,0,0.45);
         }
 
 
+        .presentation h2 {
+
+            font-family:
+                Georgia,
+                "Times New Roman",
+                serif;
+
+            font-size:
+                clamp(36px, 5vw, 55px);
+
+            font-weight: normal;
+
+            margin-bottom: 28px;
+        }
+
+
+        .presentation p {
+
+            max-width: 850px;
+
+            margin: auto;
+
+            color: #555;
+
+            font-size: 17px;
+
+            line-height: 1.8;
+        }
+
+
+        /* ==================================================
+           SECTION SEIKO MOD
+        ================================================== */
+
+        .seiko {
+
+            background: #111;
+
+            color: white;
+
+            text-align: center;
+
+            padding: 100px 25px;
+        }
+
+
+        .seiko h2 {
+
+            font-family:
+                Georgia,
+                "Times New Roman",
+                serif;
+
+            font-size:
+                clamp(36px, 5vw, 55px);
+
+            font-weight: normal;
+
+            margin-bottom: 25px;
+        }
+
+
+        .seiko-intro {
+
+            max-width: 850px;
+
+            margin: 0 auto 55px;
+
+            color: #bdbdbd;
+
+            font-size: 17px;
+
+            line-height: 1.8;
+        }
+
+
+        /* ==================================================
+           CARTES
+        ================================================== */
+
+        .cards {
+
+            max-width: 1050px;
+
+            margin: auto;
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(2, 1fr);
+
+            gap: 25px;
+        }
         /* ========================================
            INSTAGRAM
         ======================================== */
 
         .instagram {
 
+        .card {
             margin-top: 28px;
 
+            background:
+                linear-gradient(
+                    145deg,
+                    #1b1b1b,
+                    #0d0d0d
+                );
             color: rgba(255,255,255,0.75);
 
+            border: 1px solid #333;
             text-decoration: none;
 
+            padding: 40px;
             font-size: 12px;
 
+            text-align: left;
             letter-spacing: 2px;
 
             transition:
+                transform 0.3s ease,
+                border-color 0.3s ease;
+        }
+
+
+        .card:hover {
+
+            transform: translateY(-5px);
+
+            border-color: #555;
+        }
+
+
+        .card h3 {
+
+            font-family:
+                Georgia,
+                "Times New Roman",
+                serif;
+
+            font-size: 28px;
+
+            font-weight: normal;
+
+            margin-bottom: 18px;
+        }
+
+
+        .card h3::after {
+
+            content: "";
+
+            display: block;
+
+            width: 45px;
+
+            height: 2px;
+
+            background: #d51f3f;
+
+            margin-top: 12px;
+        }
+
+
+        .card p {
+
+            color: #aaa;
+
+            font-size: 15px;
+
+            line-height: 1.8;
+        }
+
+
+        /* ==================================================
+           NH35
+        ================================================== */
+
+        .nh35 {
+
+            max-width: 1050px;
+
+            margin: 25px auto 0;
+
+            padding: 40px;
+
+            background: #151515;
+
+            border: 1px solid #333;
+
+            text-align: left;
+        }
+
+
+        .nh35 h3 {
+
+            font-family:
+                Georgia,
+                "Times New Roman",
+                serif;
+
+            font-size: 28px;
+
+            font-weight: normal;
+
+            margin-bottom: 15px;
+        }
+
+
+        .nh35 p {
+
+            color: #aaa;
+
+            line-height: 1.8;
+        }
+
+
+        /* ==================================================
+           FOOTER
+        ================================================== */
+
+        footer {
+
+            background: #080808;
+
+            border-top: 1px solid #222;
+
+            text-align: center;
+
+            padding: 55px 20px;
+        }
+
+
+        .footer-company {
+
+            font-family:
+                Georgia,
+                "Times New Roman",
+                serif;
+
+            font-size: 30px;
+
+            letter-spacing: 7px;
                 color 0.3s ease,
                 transform 0.3s ease;
         }
 
+
+        .footer-mods {
         .instagram:hover {
 
             color: #d51f3f;
 
+            font-size: 11px;
+
+            letter-spacing: 6px;
+        }
+
+
+        footer p {
+
+            color: #666;
+
+            font-size: 13px;
+
+            margin-top: 18px;
             transform: translateY(-2px);
         }
 
 
+        /* ==================================================
         /* ========================================
            VERSION MOBILE
+        ================================================== */
+
+        @media (max-width: 800px) {
+
+
+            header {
+
+                height: 70px;
+
+                padding: 0 5%;
+            }
+
+
+            .header-logo img {
+
+                max-width: 145px;
+
+                max-height: 52px;
+            }
+
+
+            .hero {
         ======================================== */
 
+                height: 700px;
         @media (max-width: 700px) {
 
+                min-height: 700px;
+
+                background-position: center center;
             .site-header {
                 top: 18px;
                 left: 18px;
             }
 
+
+            .hero-center {
+
+                width: 92vw;
+
+                height: 90%;
+
+                padding-bottom: 8%;
             .site-logo {
                 width: 80px;
             }
@@ -280,47 +778,135 @@
             .center-logo {
                 width: 240px;
 
+            .hero-buttons {
+
+                flex-direction: column;
+
+                gap: 10px;
+
+                width: 90%;
                 margin-bottom: 40px;
             }
+
 
             .hero-button {
                 min-width: 210px;
                 height: 52px;
 
+                width: 100%;
+
+                min-width: 0;
+
+                height: 53px;
+            }
+
+
+            .presentation,
+            .seiko {
+
+                padding: 70px 20px;
+            }
+
+
+            .cards {
+
+                grid-template-columns: 1fr;
+            }
+
+
+            .card {
+
+                padding: 30px;
+            }
+
+
+            .nh35 {
+
+                padding: 30px;
+            }
+
+        }
+
+
+        /* ==================================================
+           PETITS TÉLÉPHONES
+        ================================================== */
+
+        @media (max-width: 500px) {
+
+
+            .hero {
+
+                height: 650px;
+
+                min-height: 650px;
+
+                background-position: center center;
                 font-size: 10px;
             }
 
+
+            .hero-center {
+
+                padding-bottom: 5%;
             .buttons {
                 gap: 12px;
             }
 
+
+            .hero-button {
+
+                font-size: 10px;
+
+                letter-spacing: 2px;
             .instagram {
                 margin-top: 22px;
             }
+
         }
 
     </style>
+
 </head>
 
 
 <body>
 
 
+<!-- =====================================================
+     HEADER
+===================================================== -->
+
+<header>
     <!-- ========================================
          PAGE D'ACCUEIL
     ======================================== -->
 
     <main class="hero">
 
+    <!--
+        Logo Company Mods
 
+        Le clic renvoie toujours vers la page d'accueil.
+    -->
         <!-- ====================================
              LOGO EN HAUT À GAUCHE
         ===================================== -->
 
+    <a
+        href="index.html"
+        class="header-logo"
+        aria-label="Retour à l'accueil Company Mods"
+    >
         <header class="site-header">
 
+        <img
+            src="logo-company-mods.png"
+            alt="Company Mods"
+        >
             <a href="index.html" class="logo-link">
 
+    </a>
                 <img
                     src="logo.png"
                     alt="Company Mods"
@@ -329,36 +915,75 @@
 
             </a>
 
+    <!--
+        Instagram Company Mods
+    -->
         </header>
 
+    <a
+        href="https://www.instagram.com/company_mods/"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="instagram"
+        aria-label="Instagram Company Mods"
+    >
 
+        <svg viewBox="0 0 24 24">
 
+            <rect
+                x="3"
+                y="3"
+                width="18"
+                height="18"
+                rx="5"
+            ></rect>
         <!-- ====================================
              CONTENU CENTRAL
         ===================================== -->
 
+            <circle
+                cx="12"
+                cy="12"
+                r="4"
+            ></circle>
         <div class="hero-content">
 
+            <circle
+                cx="17.5"
+                cy="6.5"
+                r="1"
+                fill="#111"
+                stroke="none"
+            ></circle>
 
+        </svg>
             <!-- LOGO COMPANY MODS AU CENTRE -->
 
+    </a>
             <img
                 src="logo.png"
                 alt="Company Mods"
                 class="center-logo"
             >
 
+</header>
 
 
             <!-- =================================
                  LES TROIS BOUTONS
             ================================== -->
 
+<!-- =====================================================
+     HERO
+===================================================== -->
             <div class="buttons">
 
+<section class="hero">
 
                 <!-- PERSONNALISER -->
 
+    <!--
+        L'image hero-company-mods.png contient :
                 <a
                     href="personnaliser.html"
                     class="hero-button"
@@ -366,7 +991,14 @@
                     PERSONNALISER UN MODÈLE
                 </a>
 
+        - la montre à gauche
+        - la montre à droite
+        - le logo Company Mods au centre
+        - l'éclairage central
+        - le sol sombre
 
+        Elle est utilisée comme véritable bandeau de la page.
+    -->
                 <!-- MODE D'EMPLOI -->
 
                 <a
@@ -376,9 +1008,11 @@
                     MODE D'EMPLOI
                 </a>
 
+    <div class="hero-center">
 
                 <!-- CONTACT -->
 
+        <div class="hero-buttons">
                 <a
                     href="contact.html"
                     class="hero-button"
@@ -387,28 +1021,230 @@
                 </a>
 
 
+            <!-- =========================================
+                 1 — PERSONNALISER
+            ========================================== -->
             </div>
 
+            <a
+                href="personnaliser.html"
+                class="hero-button primary"
+            >
+                PERSONNALISER UN MODÈLE
+            </a>
 
 
+            <!-- =========================================
+                 2 — MODE D'EMPLOI
+            ========================================== -->
             <!-- =================================
                  INSTAGRAM
             ================================== -->
 
             <a
+                href="mode-emploi.html"
+                class="hero-button"
                 href="https://www.instagram.com/company_mods/"
                 target="_blank"
                 rel="noopener noreferrer"
                 class="instagram"
             >
+                MODE D’EMPLOI
+            </a>
+
+
+            <!-- =========================================
+                 3 — CONTACT
+            ========================================== -->
+
+            <a
+                href="contact.html"
+                class="hero-button"
+            >
+                CONTACT
                 INSTAGRAM
             </a>
 
 
         </div>
 
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     PRÉSENTATION
+===================================================== -->
+
+<section class="presentation">
+
+
+    <div class="section-label">
+        COMPANY MODS
+    </div>
+
+
+    <h2>
+        L’horlogerie personnalisée
+    </h2>
+
+
+    <p>
+
+        Company Mods est une marque dédiée à la
+        personnalisation horlogère et à la création
+        de montres uniques.
+
+        Chaque modèle est pensé pour associer
+        esthétique, caractère et mécanique,
+        afin de proposer une montre qui correspond
+        véritablement à son propriétaire.
+
+    </p>
+
+
+</section>
+
+
+
+<!-- =====================================================
+     SEIKO MOD
+===================================================== -->
+
+<section class="seiko">
+
+
+    <div class="section-label">
+        NOTRE SAVOIR-FAIRE
+    </div>
+
+
+    <h2>
+        Qu’est-ce qu’une Seiko Mod ?
+    </h2>
+
+
+    <p class="seiko-intro">
+
+        Une Seiko Mod est une montre mécanique
+        personnalisée à partir de différents composants.
+
+        Le principe consiste à sélectionner et assembler
+        différents éléments — cadran, aiguilles, boîtier,
+        lunette, bracelet et autres composants —
+        afin de créer une pièce unique.
+
+    </p>
+
+
+
+    <div class="cards">
+
+
+        <div class="card">
+
+            <h3>
+                Une montre unique
+            </h3>
+
+            <p>
+
+                Chaque combinaison de composants permet
+                de créer une montre différente.
+
+                Les couleurs, les matériaux et les détails
+                peuvent être choisis afin de donner à chaque
+                modèle sa propre identité.
+
+            </p>
+
+        </div>
+
+
+
+        <div class="card">
+
+            <h3>
+                Une mécanique automatique
+            </h3>
+
+            <p>
+
+                Les modèles peuvent être équipés du mouvement
+                automatique NH35, reconnu pour sa simplicité,
+                sa robustesse et son fonctionnement mécanique.
+
+            </p>
+
+        </div>
+
+
+    </div>
+
+
+
+    <!-- ================================================
+         NH35
+    ================================================= -->
+
+    <div class="nh35">
+
+
+        <h3>
+            Le mouvement NH35
+        </h3>
+
+
+        <p>
+
+            Le NH35 est un mouvement mécanique automatique.
+            Il ne nécessite donc pas de pile.
+
+            Le ressort moteur emmagasine l'énergie nécessaire
+            au fonctionnement de la montre.
+
+            Cette énergie peut être fournie par le remontage
+            manuel de la couronne ou par les mouvements
+            du poignet lorsque la montre est portée.
+
+        </p>
+
+
+    </div>
+
+
+</section>
+
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer>
+
+
+    <div class="footer-company">
+        COMPANY
+    </div>
+
+
+    <div class="footer-mods">
+        MODS
+    </div>
+
+
+    <p>
+        Horlogerie personnalisée
+    </p>
+
+
+</footer>
     </main>
 
 
 </body>
+
 </html>
